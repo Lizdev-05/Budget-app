@@ -12,7 +12,6 @@ class TurboFailureApp < Devise::FailureApp
     %w(html turbo_stream */*).include? request_format.to_s
   end
 end
-
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -27,20 +26,20 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '097ace7661a9d6f9ff841d79911f9f36b84ffe77ce191acf948f46650255e028ca617e2e70be0d82d0f589274acca5c710f639f555ebb5b43817c4327adf1db6'
+  # config.secret_key = '095e8ea690a5607fd35da93384f2afebb7efedfcb2bfb7a9bfa63c88df61cbfdb1996eb6a91af6d57750478e1c1f7531f54cc53934ae5d2421167a8e20639281'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
 
+  # ==> Mailer Configuration
   config.parent_controller = 'TurboController'
 
   # ==> Warden configuration
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
   end
-
-  # ==> Mailer Configuration
+  
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
@@ -146,7 +145,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '38c20e89e32e17376b5ee36c24153691bd4bc0f8bc033b3e937956c64fd6a519ca9477fa262c3fff6c343a9053205425fd86fb9312e148d1d0a32658e659cad7'
+  # config.pepper = '9b3021bced30b2d81a48b0c6b10b59be4c431bbf9f7425b5e7ecc6b1cd0927c89857342c680d1a4587874ec0fe8040ce3810c7efbc7c524f70cde6098e9564b7'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
