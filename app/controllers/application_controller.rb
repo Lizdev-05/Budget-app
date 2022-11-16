@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, { roles: [] }])
-  end
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :avatar, { roles: [] }])
+end
+
+private
+
+def splash_screen
+  redirect_to splash_screens_index_path unless user_signed_in?
+end
 end
