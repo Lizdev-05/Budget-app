@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body {
   width: 100%;
-  background-color: #283f54;
+  background-color: rgba(241, 241, 241, 0.6);
   overflow-x: hidden;
   position: relative;
 }
@@ -34,10 +34,6 @@ li {
 .img {
   width: 45px;
   height: 45px;
-}
-
-body {
-  background-color: rgba(241, 241, 241, 0.6);
 }
 
 .alert,
