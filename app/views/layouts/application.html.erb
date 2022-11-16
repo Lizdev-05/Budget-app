@@ -10,12 +10,17 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "turbo", type: "module" %>
+    <%= javascript_include_tag "" %>
+    <%= stylesheet_link_tag "general" %>
   </head>
 
   <body>
     <%= yield %>
-      <% flash.each do |name, message| %>
-    <div class="<%= name %>"><%= message %></div>
-    <% end %>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <%end%>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <%end%>
   </body>
 </html>

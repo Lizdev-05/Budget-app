@@ -1,0 +1,16 @@
+
+<header class="ht container pt-4 d-flex flex-column  align-items-center justify-contents-center">
+  <div class='logo'>
+    <h1 class = ' fm fst-italic'>Budget Wise</h1>
+  </div>
+  <nav class='nav'>
+    <ul>
+      <li class='login'>
+        <%= link_to "LOG IN", new_user_session_path, class: 'btn main-bg text-light mt-4'%>
+      </li>
+      <li class='signup'>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn main-bg text-light mt-4' %>
+      </li>
+    </ul>
+  </nav>
+</header>
