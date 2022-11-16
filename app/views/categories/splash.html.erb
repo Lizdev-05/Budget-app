@@ -1,0 +1,11 @@
+<section >
+  <div >
+    <h1>Budget App</h1>
+    <div >
+      <%= link_to "Log In", new_user_session_path %>
+      <br>
+      <%= link_to "Register", new_user_registration_path %>
+    </div>
+  </div>
+</section>
+<%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete } %>

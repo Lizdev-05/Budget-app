@@ -4,5 +4,5 @@ class Group < ApplicationRecord
 
 
     validates :name, presence: true, length: { maximum: 50 }
-    validate :icon, presence: true, length: { maximum: 100 }
+    validates :icon, presence: true, length: { maximum: 100 }
 end
