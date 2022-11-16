@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "splash_screens#index"
-  resources :categories do
-    resources :entities
+  resources :categories 
   end
 end
