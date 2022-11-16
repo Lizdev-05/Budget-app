@@ -1,11 +1,7 @@
 class CategoriesController < ApplicationController
-    before_action :authenticate_user!, except: :splash
-  
-    def index
+  before_action :authenticate_user!, except: :splash
 
-    end
+  def index; end
 
-    def splash
-    end
-
+  def splash; end
 end
