@@ -12,6 +12,9 @@ gem 'devise'
 # Gem for authorization
 gem 'cancancan'
 
+#  gem for splash
+gem 'font-awesome-rails'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
