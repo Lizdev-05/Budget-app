@@ -17,7 +17,7 @@
 
  <section>
 
-     <% if @categories.exists? %>
+     <% if @categories.length > 0 %>
       <ul class="category-lists-wrapper">
           <% @categories.each do |category| %>
            <%= link_to category_path(category.id), method: :get do %> 
@@ -44,4 +44,5 @@
  <div class='category-footer'>
     <%= button_to "Add Category", new_category_path, method: :get, class: 'category-btn' %>
   </div>
+  <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-warning mb-2" %>
 </section>
