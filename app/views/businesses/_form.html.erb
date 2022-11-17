@@ -1,7 +1,7 @@
-<%= form_with model: business, url: category_businesses_path do |form| %>
+<%= form_with model: business, url: category_businesses_path, :html => {:class => 'form', :id => 'form' }  do |form| %>
 
       <div class="field">
-         <%= form.select :category_id, categories.collect { |category| [category.name, category.id]} %><br />
+          <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true, class: "form-select" }) %>
       <div>
        <div class="field">
         <%= form.text_field :name, autofocus: true, autocomplete: "text", placeholder: "Enter transaction name" %>
@@ -16,7 +16,7 @@
         <% end %>
       </div>
 
-       <div class="actions">
-      <%= form.submit "Add", class: 'category-btn'%>
+       <div class="transaction-actions">
+      <%= form.submit "Add", id: 'transaction-btn'%>
     </div>
 <% end %>

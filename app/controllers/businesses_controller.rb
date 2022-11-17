@@ -21,7 +21,7 @@ class BusinessesController < ApplicationController
     def destroy
       @category = Category.includes(:category_businesses).find(params[:category_id])
       @business = @category.businesses.includes(:category_businesses).find(params[:id])
-      @business_category = CategoryBusiness.where(category_id: @category.id, business_id: @business.id)
+      @category_businesses = CategoryBusiness.where(category_id: @category.id, business_id: @business.id)
       if @business.destroy
         flash[:success] = 'Transaction was successfully deleted.'
         redirect_to category_path(@category.id)
