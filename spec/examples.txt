@@ -1,14 +1,17 @@
-example_id                             | status | run_time        |
--------------------------------------- | ------ | --------------- |
-./spec/integrations/login_spec.rb[1:1] | passed | 5.06 seconds    |
-./spec/integrations/login_spec.rb[1:2] | passed | 0.08914 seconds |
-./spec/models/business_spec.rb[1:1]    | passed | 0.01828 seconds |
-./spec/models/business_spec.rb[1:2]    | passed | 0.02203 seconds |
-./spec/models/business_spec.rb[1:3]    | passed | 0.01002 seconds |
-./spec/models/business_spec.rb[1:4]    | passed | 0.21476 seconds |
-./spec/models/category_spec.rb[1:1]    | passed | 0.01012 seconds |
-./spec/models/category_spec.rb[1:2]    | passed | 0.02527 seconds |
-./spec/models/category_spec.rb[1:3]    | passed | 0.00252 seconds |
-./spec/models/category_spec.rb[1:4]    | passed | 0.01853 seconds |
-./spec/models/category_spec.rb[1:5]    | passed | 0.02196 seconds |
-./spec/models/category_spec.rb[1:6]    | passed | 0.02578 seconds |
+example_id                                  | status | run_time        |
+------------------------------------------- | ------ | --------------- |
+./spec/integrations/login_spec.rb[1:1]      | passed | 5.99 seconds    |
+./spec/integrations/login_spec.rb[1:2]      | passed | 0.14328 seconds |
+./spec/models/business_spec.rb[1:1]         | passed | 0.01771 seconds |
+./spec/models/business_spec.rb[1:2]         | passed | 0.01379 seconds |
+./spec/models/business_spec.rb[1:3]         | passed | 0.11995 seconds |
+./spec/models/business_spec.rb[1:4]         | passed | 0.12502 seconds |
+./spec/models/category_spec.rb[1:1]         | passed | 0.02765 seconds |
+./spec/models/category_spec.rb[1:2]         | passed | 0.01103 seconds |
+./spec/models/category_spec.rb[1:3]         | passed | 0.00183 seconds |
+./spec/models/category_spec.rb[1:4]         | passed | 0.01505 seconds |
+./spec/models/category_spec.rb[1:5]         | passed | 0.0324 seconds  |
+./spec/models/category_spec.rb[1:6]         | passed | 0.01516 seconds |
+./spec/request/splash_screen_spec.rb[1:1:1] | passed | 0.01466 seconds |
+./spec/request/splash_screen_spec.rb[1:1:2] | passed | 0.46305 seconds |
+./spec/request/splash_screen_spec.rb[1:1:3] | passed | 0.22328 seconds |
