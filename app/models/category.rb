@@ -1,8 +1,8 @@
 class Category < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :user
 
-  has_many :businesses_categories, dependent: :destroy
-  has_many :businesses, through: :businesses_categories
+  has_many :category_businesses, dependent: :destroy
+  has_many :businesses, through: :category_businesses
 
   validates :icon, presence: true
   validates :name, presence: true

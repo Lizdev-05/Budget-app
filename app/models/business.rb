@@ -1,7 +1,7 @@
 class Business < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-  has_many :category_business, dependent: :destroy
-  has_many :categories, through: :category_business
+  belongs_to :author, class_name: 'User'
+  has_many :category_businesses, dependent: :destroy
+  has_many :categories, through: :category_businesses
 
   validates :amount, presence: true
 end

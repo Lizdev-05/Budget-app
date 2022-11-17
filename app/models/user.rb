@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :categories, dependent: :destroy
-  has_many :businesses, dependent: :destroy
+  has_many :businesses, dependent: :destroy, foreign_key: 'author_id'
   has_one_attached :avatar
 
   validates :name, presence: true, length: { maximum: 50 }
