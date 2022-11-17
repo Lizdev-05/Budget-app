@@ -52,11 +52,11 @@ li {
 }
 
 .alert {
-  background-color: rgba(250, 194, 194, 0.7);
+  background-color: #fac2c2b3;
   color: rgb(146, 33, 33);
 }
 
 .notice {
-  background-color: rgb(179, 255, 179, 0.7);
+  background-color: #b3ffb3b3;
   color: rgb(21, 119, 21);
 }
