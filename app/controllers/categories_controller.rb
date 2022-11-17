@@ -19,12 +19,13 @@ class CategoriesController < ApplicationController
       render 'new'
     end
   end
+
   def show
-    @category = Category.includes(:author).find(params[:id])
+    @category = Category.includes(:user).find(params[:id])
   end
 
   def category_params
-    my_category = params.require(:category).permit(:name, :icon)
+    params.require(:category).permit(:name, :icon)
   end
 
   def destroy
