@@ -87,7 +87,7 @@ html {
 
 .nav {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   width: 90%;
   margin: auto;
 }
@@ -104,13 +104,13 @@ html {
 
 .nav ul li {
   list-style-type: none;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .nav ul li a {
   text-decoration: none;
   display: block;
-  padding: 12px;
+  padding: 8px;
   text-align: center;
   border-radius: 25px;
   font-size: 1.2rem;
