@@ -1,4 +1,5 @@
 
+   <section class="categories_controllers">
     <nav class="navbar navbar-dark main-bg ">
     <div class="container">
      <%= link_to '←',categories_path, class:'text-light text-decoration-none fs-2' %>
@@ -6,51 +7,43 @@
        <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
   </div>
   </nav>
- <section class="category-lists-wrapper details ">
-  <div class = 'container pt-4 '>
-<div class = 'd-flex flex-row justify-content-between w-70'>
- <span><%= image_tag(@category.icon, class:'img') %></span>
-  <p> <strong><%= @category.name %></strong></p>
+
+  <section class="category-section details ">
+    <div class='payment'>
+      <p>TOTAL EXPENSES</p>
+      <h2>$<%= @category.businesses.sum(:amount) || '0.00' %></h2>
+      <div class='desc'>
+        <ion-icon id="list-img" name="<%= @category.icon %>"  class="transaction-img <%= @category.icon %>"></ion-icon>
+        <span>
+          <h3><%= @category.name %></h3>
+        </span>
+      </div>
+    </div>
+      <% if @transactions.present?%>
+        <div class="transaction-container">
+    <hr>
+    <% @transactions.each do |transaction| %>
+    <div class='transaction'>
+      <span>
+        <h3><%= transaction.name %></h3>
+        <small><%= transaction.created_at.to_date.strftime("%d %b, %Y") %></small>
+      </span>
+      <span>
+         <%= button_to "Remove", category_business_path(@category,transaction), method: :delete, class: 'delete-transaction' %>
+      </span>
     </div>
     <hr>
-    <div class='container py-3'>
-    <% @transactions.each do |transaction| %> 
-   <div class = 'card border-white'>
-              <div class = 'card-body d-flex flex-row justify-content-between'>
-                <div class = 'd-flex flex-column'>
-                <p> <strong><%= transaction.name %></strong></p>
-                <p>Date: &nbsp;<small><%= transaction.created_at.to_date.strftime("%d %b, %Y") %></small></p>
-                </div>
-                <p> <strong>$<%= transaction.amount %></strong></p>
-              </div>
-            </div>
-         <%= button_to "Remove", category_business_path(@category,transaction), method: :delete, class: 'delete-transaction' %>
-    </div>
-   <hr>
+
    <% end %>
-   <div class='payment'>
-      <h4>TOTAL PAYMENT</h4>
-      <p>$<%= @category.businesses.sum(:amount) || '0.00' %></p>
-    </div>
- 
- <div class = 'container bg-primary py-3'>
-    <div class = 'card bg-primary border-white'>
-      <div class = 'card-body text-center'>
-        <%= link_to "Add New Transaction", new_category_business_path(@category), method: :get, class:'text-light text-decoration-none fs-4'%>
-      </div>
-    </div>
-  </div>
-
-
-<div class = 'container bg-danger py-3 mt-3'>
-    <div class = 'card bg-danger border-white'>
-      <div class = 'card-body text-center'>
-      <%= link_to "Delete Category", category_path, method: :delete, class:'text-light text-decoration-none fs-4' %>
-      </div>
-    </div>
-  </div>
+    <%= button_to "Delete Category", category_path, method: :delete, class: 'delete-categories' %>
 </div>
+  <% else %>
+  <p></p>
+  <% end %>
+
+  </section>
+  <div class='category-footer'>
+    <%= button_to "+", new_category_business_path(@category), method: :get, class: 'category-btn' %>
+    <p>Add New Transaction
+  </div>
 </section>
-
-
-
