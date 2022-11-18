@@ -6,15 +6,25 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @category = Category.includes(:category_businesses).find(params[:category_id])
-    @business = @category.businesses.new(business_params)
-    if @business.save
-      CategoryBusiness.create(category_id: @category.id, business_id: @business.id)
-      flash[:success] = 'Transaction added successfully'
-      redirect_to category_path(@category.id)
+    @category = Category.find(params[:category_id])
+    if @category.user != current_user
+      flash[:alert] = 'You can only create transaction from your categories'
+      redirect_to categories_path
+    end
+    if business_params[:category_ids].length == 1
+      flash[:alert] = 'Must select at least one category'
+      redirect_to new_category_business_path(@category)
     else
-      flash.now[:error] = 'Error: Transaction could not be added'
-      render :new, status: :unprocessable_entity
+      @category = Category.find(params[:category_id])
+      @business = Business.new(business_params)
+      @business.author = current_user
+
+      if @business.save
+        flash[:notice] = 'Transaction was created successfully'
+        redirect_to @category
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
@@ -32,8 +42,6 @@ class BusinessesController < ApplicationController
   end
 
   def business_params
-    my_business = params.require(:business).permit(:name, :amount)
-    my_business[:author] = current_user
-    my_business
+    params.require(:business).permit(:name, :amount, category_ids: [])
   end
 end

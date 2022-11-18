@@ -20,6 +20,16 @@ gem 'ffi'
 
 gem 'rails-controller-testing'
 
+# image
+gem 'gravatar_image_tag', '~> 1.2'
+
+# IonIcons
+gem 'font-ionicons-rails', git: 'https://github.com/ricardoemerson/font-ionicons-rails.git'
+
+gem 'prettier'
+
+gem 'image_processing', '~> 1.2'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -92,3 +102,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'ruby-lsp', '~> 0.3.0', group: :development
