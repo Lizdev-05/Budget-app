@@ -31,7 +31,7 @@ In order to work on this project, you need to have the following dependencies in
 
 ### Click here for Video Link
 
-- [Video link](https://www.loom.com/share/aeb8eda3fe374e858c2d0d4248a1aff1)
+- [Video link](https://www.loom.com/share/f22aafe804b641d384a625a42fd7e50d)
 
 ## Getting Started
 
