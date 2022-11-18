@@ -19,7 +19,7 @@ html {
   align-items: center;
   flex-direction: column;
   position: relative;
-  background-color: rgb(162 158 229 / 86%);
+  background-color: #a29ee5db;
   mix-blend-mode: multiply;
   backdrop-filter: blur(5.5px);
 }
